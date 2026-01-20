@@ -7,7 +7,7 @@ import { UserContext } from "./contexts/UserContext";
 
 import ProductDetailsPage from "@pages/site/ProductDetailsPage";
 import ShopPage from "@pages/site/shop/ShopPage";
-import Cart from "@pages/site/Cart/Cart";
+import Cart from "@pages/site/Cart/Cart.jsx";
 import Checkout from "@/pages/site/Checkout/Checkout";
 import Home from "@pages/site/home/Home";
 
