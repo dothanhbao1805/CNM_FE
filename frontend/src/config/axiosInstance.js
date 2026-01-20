@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 // Axios có interceptor (dùng cho toàn site)
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/",
+  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api/",
 });
 
 let isRefreshing = false;
@@ -22,8 +22,9 @@ const addSubscriber = (callback) => {
 
 // Hàm refresh token riêng (không import từ AuthService)
 const refreshTokenRequest = async (oldToken) => {
+  const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
   const response = await axios.post(
-    "http://127.0.0.1:8000/api/auth/refresh",
+    `${API_BASE}/auth/refresh`,
     {},
     {
       headers: {
@@ -31,7 +32,7 @@ const refreshTokenRequest = async (oldToken) => {
       },
     }
   );
-  return response.data.token; // Lấy token mới từ response
+  return response.data.token;
 };
 
 // Interceptor request: tự gắn token vào header
