@@ -154,7 +154,7 @@ function Cart() {
         const cart = JSON.parse(localStorage.getItem('cart') || '[]');
         const updatedCart = cart.filter(item => item.id !== id);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
-        
+
         // Trigger update
         window.dispatchEvent(new Event('cartUpdated'));
 
