@@ -9,6 +9,9 @@ function VNPayReturn() {
     const [message, setMessage] = useState('');
     const [orderInfo, setOrderInfo] = useState(null);
 
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+
     useEffect(() => {
         const processPayment = async () => {
             // Lấy tất cả params từ URL
@@ -20,7 +23,7 @@ function VNPayReturn() {
             try {
                 // Gọi API backend để xác thực và cập nhật đơn hàng
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/vnpay-return?${searchParams.toString()}`,
+                    `${API_URL}/vnpay-return?${searchParams.toString()}`,
                     {
                         method: 'GET',
                         headers: {
