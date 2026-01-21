@@ -121,7 +121,7 @@ function Checkout() {
         payment_method: "cod",
       };
 
-      const response = await fetch("${API_URL}/order-cod", {
+      const response = await fetch(`${API_URL}/order-cod`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -192,7 +192,7 @@ function Checkout() {
         note: note || "",
       };
 
-      const response = await fetch("${API_URL}/vnpay_payment", {
+      const response = await fetch(`${API_URL}/vnpay_payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
