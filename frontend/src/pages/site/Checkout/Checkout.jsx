@@ -81,6 +81,8 @@ function Checkout() {
     return basicInfoValid;
   };
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+
   const handlePlaceOrder = async () => {
     if (!isFormValid()) {
       alert("Vui lòng điền đầy đủ thông tin!");
@@ -119,7 +121,7 @@ function Checkout() {
         payment_method: "cod",
       };
 
-      const response = await fetch("http://127.0.0.1:8000/api/order-cod", {
+      const response = await fetch("${API_URL}/order-cod", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -190,7 +192,7 @@ function Checkout() {
         note: note || "",
       };
 
-      const response = await fetch("http://127.0.0.1:8000/api/vnpay_payment", {
+      const response = await fetch("${API_URL}/vnpay_payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
