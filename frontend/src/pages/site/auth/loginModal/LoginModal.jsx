@@ -140,11 +140,10 @@ function LoginModal({
                 type="text"
                 id="emailField"
                 placeholder="Nhập vào số Email của bạn"
-                className={`w-full px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
-                  errors.email
-                    ? "border-red-500 focus:ring-red-200"
-                    : "border-gray-300 focus:ring-blue-200 focus:border-blue-500"
-                }`}
+                className={`w-full px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 transition-all ${errors.email
+                  ? "border-red-500 focus:ring-red-200"
+                  : "border-gray-300 focus:ring-blue-200 focus:border-blue-500"
+                  }`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -168,11 +167,10 @@ function LoginModal({
                   type={showPassword ? "text" : "password"}
                   id="passwordField"
                   placeholder="Nhập vào mật khẩu của bạn"
-                  className={`w-full px-4 py-2.5 pr-12 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
-                    errors.password
-                      ? "border-red-500 focus:ring-red-200"
-                      : "border-gray-300 focus:ring-blue-200 focus:border-blue-500"
-                  }`}
+                  className={`w-full px-4 py-2.5 pr-12 border rounded-lg focus:outline-none focus:ring-2 transition-all ${errors.password
+                    ? "border-red-500 focus:ring-red-200"
+                    : "border-gray-300 focus:ring-blue-200 focus:border-blue-500"
+                    }`}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -206,6 +204,25 @@ function LoginModal({
               >
                 Quên mật khẩu?
               </span>
+
+            </div>
+
+
+            {/* Test accounts - testing only */}
+            <div className="mb-6 p-3 border border-dashed border-gray-300 rounded-lg bg-gray-50">
+              <p className="text-xs font-semibold text-gray-700 mb-2">
+                🔧 Tài khoản dùng để test:
+              </p>
+
+              <p className="text-sm text-gray-700">
+                <span className="font-medium">Admin:</span>{" "}
+                dothanhbao1805@gmail.com / 12345678
+              </p>
+
+              <p className="text-sm text-gray-700">
+                <span className="font-medium">User:</span>{" "}
+                dothanhbao42@gmail.com / 12345678
+              </p>
             </div>
 
             {/* Login Button */}
